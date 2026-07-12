@@ -1,6 +1,34 @@
 // Configuración de Surfingkeys (~/.surfingkeys.js)
 
-// Habilitar tema Cyberpunk Neon
+// 1. Estilo para las etiquetas de enlaces (Hints - Modo normal)
+api.Hints.style(`
+    background: #0d0211 !important;
+    color: #00f5ff !important; /* Cian Neón */
+    border: 2px solid #00f5ff !important;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: "JetBrains Mono", "Courier New", monospace;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    box-shadow: 0px 0px 8px #00f5ff !important;
+    text-shadow: 0px 0px 2px #00f5ff !important;
+`, 'hint');
+
+// 2. Estilo para las etiquetas en modo texto / visual (Rosa Neón)
+api.Hints.style(`
+    background: #0d0211 !important;
+    color: #ff007f !important; /* Rosa Neón */
+    border: 2px solid #ff007f !important;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: "JetBrains Mono", "Courier New", monospace;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    box-shadow: 0px 0px 8px #ff007f !important;
+    text-shadow: 0px 0px 2px #ff007f !important;
+`, 'text');
+
+// 3. Tema general para la barra de estado y buscador (Omnibar)
 settings.theme = `
 .sk_theme {
     font-family: "JetBrains Mono", "Courier New", monospace;
@@ -41,24 +69,6 @@ settings.theme = `
     background: #0d0211 !important;
     color: #00f5ff !important;
     box-shadow: 0px 0px 8px #ff007f;
-}
-
-/* Estilo para las etiquetas de enlaces (Hints - Etiquetas Neón) */
-#sk_hints > div {
-    background: #0d0211 !important;
-    color: #00f5ff !important; /* Texto Cian Neón */
-    border: 2px solid #00f5ff !important;
-    font-weight: bold;
-    font-size: 12px;
-    font-family: "JetBrains Mono", "Courier New", monospace;
-    padding: 2px 5px !important;
-    border-radius: 4px !important;
-    box-shadow: 0px 0px 8px #00f5ff !important;
-    text-shadow: 0px 0px 2px #00f5ff !important;
-}
-#sk_hints > div.begin {
-    color: #ff007f !important; /* Rosa Neón para la letra inicial */
-    text-shadow: 0px 0px 2px #ff007f !important;
 }
 `;
 
