@@ -1,55 +1,67 @@
-// Configuración de Surfingkeys (Solo diseño de Hints)
+// an example to create a new mapping `ctrl-y`
+api.mapkey('<ctrl-y>', 'Show me the money', function() {
+    api.Front.showPopup('a well-known phrase uttered by characters in the 1996 film Jerry Maguire (Escape to close).');
+});
 
-const hintCSS = `
-    background: #0d0211 !important;
-    background-color: #0d0211 !important;
-    background-image: none !important;
-    color: #00f5ff !important;
-    border: 2px solid #00f5ff !important;
-    font-weight: bold !important;
-    font-size: 13px !important;
-    font-family: monospace !important;
-    box-shadow: 0px 0px 8px #00f5ff !important;
-    text-shadow: 0px 0px 2px #00f5ff !important;
-    border-radius: 4px !important;
-    padding: 2px 6px !important;
-`;
+settings.blocklistPattern = /monkeytype\.com/;
 
-// 1. Intentar aplicar usando las APIs de JavaScript (para Shadow DOM y herencia)
-try {
-    if (typeof api !== "undefined" && api.Hints && api.Hints.style) {
-        api.Hints.style(hintCSS, "hint");
-        api.Hints.style(hintCSS, "text");
-    }
-} catch (e) {}
+// an example to replace `T` with `gt`, click `Default mappings` to see how `T` works.
+api.map('gt', 'T');
 
-try {
-    if (typeof Hints !== "undefined" && Hints.style) {
-        Hints.style(hintCSS, "hint");
-        Hints.style(hintCSS, "text");
-    }
-} catch (e) {}
+// an example to remove mapkey `Ctrl-i`
+api.unmap('<ctrl-i>');
 
-// 2. Intentar aplicar usando settings.theme (por si se renderiza en el DOM global del plugin)
-try {
-    settings.theme = `
-        #sk_hints > div {
-            background: #0d0211 !important;
-            background-color: #0d0211 !important;
-            background-image: none !important;
-            color: #00f5ff !important;
-            border: 2px solid #00f5ff !important;
-            font-weight: bold !important;
-            font-size: 13px !important;
-            font-family: monospace !important;
-            box-shadow: 0px 0px 8px #00f5ff !important;
-            text-shadow: 0px 0px 2px #00f5ff !important;
-            border-radius: 4px !important;
-            padding: 2px 6px !important;
-        }
-        #sk_hints > div.begin {
-            color: #ff007f !important;
-            text-shadow: 0px 0px 2px #ff007f !important;
-        }
-    `;
-} catch (e) {}
+// set theme
+settings.theme = `
+.sk_theme {
+    font-family: Input Sans Condensed, Charcoal, sans-serif;
+    font-size: 10pt;
+    background: #24272e;
+    color: #abb2bf;
+}
+.sk_theme tbody {
+    color: #fff;
+}
+.sk_theme input {
+    color: #d0d0d0;
+}
+.sk_theme .url {
+    color: #61afef;
+}
+.sk_theme .annotation {
+    color: #56b6c2;
+}
+.sk_theme .omnibar_highlight {
+    color: #528bff;
+}
+.sk_theme .omnibar_timestamp {
+    color: #e5c07b;
+}
+.sk_theme .omnibar_visitcount {
+    color: #98c379;
+}
+.sk_theme #sk_omnibarSearchResult ul li:nth-child(odd) {
+    background: #303030;
+}
+.sk_theme #sk_omnibarSearchResult ul li.focused {
+    background: #3e4452;
+}
+#sk_status, #sk_find {
+    font-size: 20pt;
+}`
+
+api.Hints.style("             \
+ text-align: center;          \
+ vertical-align: middle;      \
+ border: 2px solid #00f5ff !important; \
+ border-radius: 5%;          \
+ padding: .2%;                \
+ background: #0d0211 !important; \
+ color: #00f5ff !important;    \
+ font-size:10pt;              \
+ font-family: Input Sans Condensed, Charcoal, sans-serif; \
+ box-shadow: 0px 0px 8px #00f5ff !important; \
+ text-shadow: 0px 0px 2px #00f5ff !important;",
+  "hint"
+);
+// click `Save` button to make above settings to take effect.
