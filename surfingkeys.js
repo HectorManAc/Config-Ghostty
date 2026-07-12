@@ -62,4 +62,13 @@ api.Hints.style("             \
  font-family: Input Sans Condensed, Charcoal, sans-serif;",
   "hint"
 );
+
+// Mapkey 'yc' to copy the text of any selected element on the screen to clipboard
+api.mapkey('yc', 'Copy text of a selected element to clipboard', function() {
+    api.Hints.create('a, button, [role="button"], p, span, li, h1, h2, h3, h4, h5, h6, input[type="button"], input[type="submit"]', function(element) {
+        var text = element.innerText || element.value || element.textContent || '';
+        api.Clipboard.write(text.trim());
+        api.Front.showPopup('Copied: "' + text.trim().substring(0, 40) + '..."');
+    });
+});
 // click `Save` button to make above settings to take effect.
