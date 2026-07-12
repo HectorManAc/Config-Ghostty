@@ -48,26 +48,18 @@ settings.theme = `
 }
 #sk_status, #sk_find {
     font-size: 20pt;
-}`;
+}`
 
-// --- Estilos de Hints y Visual basados en Foldex (Cyberpunk Neon) ---
-const hintStyle = 'border: solid 2px #00f5ff !important; color: #00f5ff !important; background: initial !important; background-color: #0d0211 !important; box-shadow: 0px 0px 8px #00f5ff !important; text-shadow: 0px 0px 2px #00f5ff !important; font-family: monospace !important;';
-const textHintStyle = 'border: solid 2px #ff007f !important; color: #ff007f !important; background: initial !important; background-color: #0d0211 !important; box-shadow: 0px 0px 8px #ff007f !important; text-shadow: 0px 0px 2px #ff007f !important; font-family: monospace !important;';
-
-if (typeof api !== "undefined" && api.Hints) {
-    api.Hints.style(hintStyle);
-    api.Hints.style(textHintStyle, "text");
-    if (api.Visual) {
-        api.Visual.style('marks', 'background-color: #00f5ff99 !important;');
-        api.Visual.style('cursor', 'background-color: #ff007f !important;');
-    }
-} else {
-    if (typeof Hints !== "undefined") {
-        Hints.style(hintStyle);
-        Hints.style(textHintStyle, "text");
-    }
-    if (typeof Visual !== "undefined") {
-        Visual.style('marks', 'background-color: #00f5ff99 !important;');
-        Visual.style('cursor', 'background-color: #ff007f !important;');
-    }
-}
+api.Hints.style("             \
+ text-align: center;          \
+ vertical-align: middle;      \
+ border: 2px solid #303030;   \
+ border-radius: 5%;          \
+ padding: .2%;                \
+ background: #ffffffff;         \
+ color: #000000;              \
+ font-size:10pt;              \
+ font-family: Input Sans Condensed, Charcoal, sans-serif;",
+  "hint"
+);
+// click `Save` button to make above settings to take effect.
